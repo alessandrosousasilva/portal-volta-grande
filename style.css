@@ -313,18 +313,53 @@ footer strong {
 /* =========================================
    RESPONSIVIDADE CONSOLIDADA
    ========================================= */
-@media (max-width: 992px) {
-  .grid-telefones { grid-template-columns: repeat(3, 1fr); }
-}
-
+/* Regras para Tablets e Telas Médias (Até 768px) */
 @media (max-width: 768px) {
-  .menu-principal ul { flex-wrap: wrap; }
-  .menu-principal a { padding: 12px 15px; font-size: 0.85rem; }
-  .menu-principal a::after { display: none; }
+  .menu-principal ul { 
+    flex-wrap: wrap; 
+  }
+  .menu-principal a { 
+    padding: 12px 15px; 
+    font-size: 0.85rem; 
+  }
+  .menu-principal a::after { 
+    display: none; 
+  }
+  
+  /* Força 2 colunas para celulares e tablets pequenos, garantindo proporção (4 linhas de 2) */
+  .grid-telefones { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px; 
+  }
 }
 
+/* Regras específicas para Celulares (Telas pequenas até 576px) */
 @media (max-width: 576px) {
-  .grid-telefones { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-  .evento-card { flex-direction: column; text-align: center; gap: 15px; }
-  .evento-card:hover { transform: translateY(-5px); border-left: none; border-bottom: 4px solid var(--azul-primario); }
+  .tel-item {
+    padding: 20px 10px;
+  }
+  .tel-item img.icone-img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .evento-card { 
+    flex-direction: column; 
+    text-align: center; 
+    gap: 15px; 
+    padding: 25px 15px;
+  }
+  .evento-card:hover { 
+    transform: translateY(-5px); 
+    border-left: none; 
+    border-bottom: 4px solid var(--azul-primario); 
+  }
+}
+
+/* Ajuste extra para ecrãs muito pequenos (iPhone SE, etc) */
+@media (max-width: 380px) {
+  .menu-principal a {
+    padding: 10px 5px;
+    font-size: 0.75rem;
+  }
 }
