@@ -445,7 +445,7 @@ footer strong {
   display: flex !important;
   flex-direction: column;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 10 auto;
 }
 
 /* No computador, o ícone volta para a esquerda para aproveitar o espaço */
