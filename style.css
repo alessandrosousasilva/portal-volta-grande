@@ -1,0 +1,330 @@
+/* Importando fonte */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap");
+
+/* =========================================
+   VARIÁVEIS DE CORES
+   ========================================= */
+:root {
+  --azul-escuro: #002244;
+  --azul-primario: #00509d;
+  --amarelo-destaque: #ffd500;
+  --fundo-site: #f4f7f6;
+  --texto-principal: #2c3e50;
+  --branco: #ffffff;
+  --sombra-suave: 0 8px 24px rgba(0, 34, 68, 0.08);
+  --sombra-hover: 0 15px 35px rgba(0, 80, 157, 0.15);
+}
+
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+   ========================================= */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--fundo-site);
+  color: var(--texto-principal);
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(135deg, var(--azul-escuro), var(--azul-primario));
+  color: var(--branco);
+  text-align: center;
+  padding: 3rem 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0 0 10px 0;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+main {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+h2 {
+  color: var(--azul-escuro);
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 4px;
+  background-color: var(--amarelo-destaque);
+  bottom: 0;
+  left: 0;
+  border-radius: 2px;
+}
+
+/* =========================================
+   BARRA DE NAVEGAÇÃO SUPERIOR (Navbar)
+   ========================================= */
+.menu-principal {
+  background-color: var(--branco);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.menu-principal ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+}
+
+.menu-principal a {
+  display: block;
+  padding: 22px 35px;
+  color: var(--azul-escuro);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.menu-principal a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 4px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--amarelo-destaque);
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+  border-radius: 4px 4px 0 0;
+}
+
+.menu-principal a:hover {
+  color: var(--azul-primario);
+}
+
+.menu-principal a:hover::after {
+  width: 100%;
+}
+
+/* =========================================
+   WIDGET DE CLIMA
+   ========================================= */
+.clima-container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 25px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#clima-texto {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#clima-texto img {
+  width: 30px;
+}
+
+/* =========================================
+   GALERIA DE IMAGENS
+   ========================================= */
+.grid-fotos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.foto-item {
+  background: var(--branco);
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: var(--sombra-suave);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.foto-item:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-hover);
+}
+
+.imagem-container {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.imagem-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.foto-item:hover .imagem-container img {
+  transform: scale(1.1);
+}
+
+/* =========================================
+   AGENDA E COLETA (Cards de Eventos)
+   ========================================= */
+.lista-eventos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.evento-card {
+  background: var(--branco);
+  border-radius: 16px;
+  padding: 20px 25px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  box-shadow: var(--sombra-suave);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.evento-card:hover {
+  transform: translateX(12px);
+  box-shadow: var(--sombra-hover);
+  border-left: 4px solid var(--azul-primario);
+}
+
+.evento-icone {
+  background: var(--fundo-site);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.evento-icone img {
+  width: 48px;
+  height: 48px;
+}
+
+.data-badge {
+  background: var(--amarelo-destaque);
+  color: var(--azul-escuro);
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+/* =========================================
+   TELEFONES ÚTEIS (Grid de Contatos)
+   ========================================= */
+.grid-telefones {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.tel-item {
+  background: var(--branco);
+  padding: 25px 15px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: var(--sombra-suave);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tel-item:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--sombra-hover);
+}
+
+.tel-item img.icone-img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 15px;
+}
+
+.tel-item a {
+  color: var(--branco);
+  background-color: #d32f2f;
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-decoration: none;
+  padding: 8px 25px;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
+}
+
+/* =========================================
+   FOOTER (Rodapé Institucional)
+   ========================================= */
+footer {
+  background-color: var(--azul-escuro);
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 60px;
+  border-top: 4px solid var(--amarelo-destaque);
+}
+
+footer strong {
+  color: var(--branco);
+}
+
+.footer-autor {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* =========================================
+   RESPONSIVIDADE CONSOLIDADA
+   ========================================= */
+@media (max-width: 992px) {
+  .grid-telefones { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .menu-principal ul { flex-wrap: wrap; }
+  .menu-principal a { padding: 12px 15px; font-size: 0.85rem; }
+  .menu-principal a::after { display: none; }
+}
+
+@media (max-width: 576px) {
+  .grid-telefones { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+  .evento-card { flex-direction: column; text-align: center; gap: 15px; }
+  .evento-card:hover { transform: translateY(-5px); border-left: none; border-bottom: 4px solid var(--azul-primario); }
+}

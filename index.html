@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Volta Grande</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body>
+  
+  <nav class="menu-principal">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="pages/coleta.html">Coleta</a></li>
+      <li><a href="pages/agenda.html">Agenda</a></li>
+      <li><a href="pages/telefones.html">Contatos</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Associação de Bairro Volta Grande</h1>
+    <p>Transparência, Cultura e Informação para nossa comunidade</p>
+
+    <div id="widget-clima" class="clima-container">
+      <span id="clima-texto">Carregando clima...</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="galeria">
+      <h2>Galeria de Imagens e Eventos</h2>
+      <div class="grid-fotos">
+
+        <div class="foto-item">
+          <div class="imagem-container">
+            <img src="assets/img3-praca.jpg" alt="Praça do Volta Grande">
+          </div>
+          <p>Nossa Praça</p>
+        </div>
+
+        <div class="foto-item">
+          <div class="imagem-container">
+            <img src="assets/img1-pista-skate.jpg" alt="Pista de Skate da comunidade">
+          </div>
+          <p>Pista de Skate</p>
+        </div>
+
+        <div class="foto-item">
+          <div class="imagem-container">
+            <img src="assets/img4-quadra.jpg" alt="Quadra de Esportes">
+          </div>
+          <p>Quadra de Esportes</p>
+        </div>
+
+        <div class="foto-item">
+          <div class="imagem-container">
+            <img src="assets/img5-feira-livre.jpg" alt="Feira Livre">
+          </div>
+          <p>Feira Livre as Sextas</p>
+        </div>
+
+        <div class="foto-item">
+          <div class="imagem-container">
+            <img src="assets/img6-ums.jpg" alt="UMS - Unidade Mista de Saúde">
+          </div>
+          <p>UMS - Unidade Mista de Saúde</p>
+        </div>
+
+        <div class="foto-item">
+          <div class="imagem-container">
+            <img src="assets/img7-paroquia.jpg" alt="Paróquia do Volta Grande">
+          </div>
+          <p>Paróquia Cristo Bom Pastor</p>
+        </div>
+
+        <div class="foto-item">
+          <div class="imagem-container">
+            <img src="assets/img8-eco-ponto.jpg" alt="Eco-Ponto para Reciclagem">
+          </div>
+          <p>Eco-Ponto</p>
+        </div>
+
+        <div class="foto-item">
+          <div class="imagem-container">
+            <img src="assets/img9-cemei.jpg" alt="CEMEI - Centro Municipal de Educação Infantil">
+          </div>
+          <p>CEMEI</p>
+        </div>
+
+      </div>
+    </section>
+
+    <br>
+
+    <section class="mapa-bairro">
+      <h2>Mapa Comunitário</h2>
+      <p>Navegue pelo nosso mapa para encontrar a feira livre, nossa praça e a quadra de esportes.</p>
+
+      <div id="mapa-volta-grande"
+        style="height: 400px; width: 100%; border-radius: 12px; border: 2px solid rgba(0,0,0,0.05); box-shadow: 0 4px 10px rgba(0,0,0,0.05); z-index: 1;">
+      </div>
+
+      <div class="legenda-mapa"
+        style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; background: #fff; padding: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+        <span class="legenda-item">🌳 Praça</span>
+        <span class="legenda-item">🥗 Feira Livre</span>
+        <span class="legenda-item">⚽ Quadras</span>
+        <span class="legenda-item">🛹 Skate</span>
+        <span class="legenda-item">⛪ Paróquia</span>
+        <span class="legenda-item">🏥 Saúde</span>
+        <span class="legenda-item">🎒 Escolas</span>
+        <span class="legenda-item">🧸 CEMEI</span>
+        <span class="legenda-item">♻️ Eco-Ponto</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Associação de Moradores do Bairro Volta Grande </strong>- Uberaba/MG</p>
+    <p class="footer-autor">
+      Desenvolvido por Alessandro Sousa | Sistemas de Informação
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
