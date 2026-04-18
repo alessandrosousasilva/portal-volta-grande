@@ -436,3 +436,36 @@ footer strong {
     font-size: 0.75rem;
   }
 }
+
+/* =========================================
+   AJUSTES ESPECÍFICOS: PÁGINA DE COLETA
+   ========================================= */
+/* Força a Coleta a ser sempre uma lista vertical (um por baixo do outro) */
+.lista-coleta {
+  display: flex !important;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* No computador, o ícone volta para a esquerda para aproveitar o espaço */
+.lista-coleta .evento-card {
+  flex-direction: row; 
+  text-align: left;
+  padding: 30px;
+}
+
+/* No telemóvel, o ícone vai para cima, mas mantém-se um cartão por linha */
+@media (max-width: 768px) {
+  .lista-coleta .evento-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px 15px;
+  }
+  
+  /* Mantém os pontos de "Dicas de Descarte" legíveis e alinhados à esquerda */
+  .lista-coleta ul {
+    text-align: left;
+    display: inline-block;
+  }
+}
