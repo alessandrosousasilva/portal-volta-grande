@@ -151,7 +151,7 @@ h2::after {
    ========================================= */
 .grid-fotos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* Força sempre 4 colunas em ecrãs grandes */
   gap: 20px;
 }
 
@@ -315,6 +315,7 @@ footer strong {
    ========================================= */
 /* Regras para Tablets e Telas Médias (Até 768px) */
 @media (max-width: 768px) {
+  /* Ajustes do Menu Principal */
   .menu-principal ul { 
     flex-wrap: wrap; 
   }
@@ -325,11 +326,44 @@ footer strong {
   .menu-principal a::after { 
     display: none; 
   }
-  
-  /* Força 2 colunas para celulares e tablets pequenos, garantindo proporção (4 linhas de 2) */
+
+  /* Ajustes do Cabeçalho e Clima (Mais compactos no mobile) */
+  header {
+    padding: 2rem 1rem; /* Reduz a altura do cabeçalho */
+  }
+  header h1 {
+    font-size: 1.5rem; /* Diminui o título principal */
+  }
+  header p {
+    font-size: 0.85rem; /* Diminui o subtítulo da transparência */
+    margin-bottom: 15px;
+  }
+  .clima-container {
+    font-size: 0.75rem; /* Letra menor no clima */
+    padding: 5px 12px;
+  }
+  #clima-texto img {
+    width: 22px; /* Ícone do clima mais pequeno */
+  }
+
+  /* Ajustes da Galeria (2 colunas) e Telefones */
   .grid-telefones { 
     grid-template-columns: repeat(2, 1fr); 
     gap: 15px; 
+  }
+  .grid-fotos {
+    grid-template-columns: repeat(2, 1fr); /* Força 2 colunas no telemóvel */
+    gap: 12px; /* Reduz o espaço entre as fotos */
+  }
+  .imagem-container {
+    height: 120px; /* Reduz a altura das fotos para caberem bem em 2 colunas */
+    margin-bottom: 10px;
+  }
+  .foto-item p {
+    font-size: 0.8rem; /* Reduz a legenda da foto */
+  }
+  .foto-item {
+    padding: 8px; /* Cartão ligeiramente mais fino */
   }
 }
 
