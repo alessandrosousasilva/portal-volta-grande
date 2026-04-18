@@ -193,27 +193,29 @@ h2::after {
    AGENDA E COLETA (Cards de Eventos)
    ========================================= */
 .lista-eventos {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 abas/colunas no computador */
   gap: 20px;
 }
 
 .evento-card {
   background: var(--branco);
   border-radius: 16px;
-  padding: 20px 25px;
+  padding: 25px 15px;
   display: flex;
+  flex-direction: column; /* O card agora é vertical (ícone em cima) */
   align-items: center;
-  gap: 25px;
+  text-align: center;
+  gap: 15px;
   box-shadow: var(--sombra-suave);
   border: 1px solid rgba(0, 0, 0, 0.03);
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
 }
 
 .evento-card:hover {
-  transform: translateX(12px);
+  transform: translateY(-8px); /* Flutua para cima ao passar o rato */
   box-shadow: var(--sombra-hover);
-  border-left: 4px solid var(--azul-primario);
+  border-bottom: 4px solid var(--azul-primario); /* Borda de destaque vai para o rodapé */
 }
 
 .evento-icone {
@@ -225,11 +227,21 @@ h2::after {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .evento-icone img {
   width: 48px;
   height: 48px;
+  transition: transform 0.4s ease;
+}
+
+.evento-card:hover .evento-icone img {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.evento-info {
+  flex-grow: 1;
 }
 
 .data-badge {
@@ -238,10 +250,24 @@ h2::after {
   font-weight: 800;
   font-size: 0.75rem;
   text-transform: uppercase;
-  padding: 5px 12px;
+  padding: 5px 15px;
   border-radius: 20px;
   display: inline-block;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.evento-info h3 {
+  margin: 0 0 10px 0;
+  color: var(--azul-escuro);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.evento-info p {
+  margin: 0;
+  color: var(--texto-principal);
+  font-size: 0.85rem;
 }
 
 /* =========================================
@@ -364,6 +390,19 @@ footer strong {
   }
   .foto-item {
     padding: 8px; /* Cartão ligeiramente mais fino */
+  }
+  .lista-eventos {
+    grid-template-columns: repeat(2, 1fr); /* Força as 2 abas no telemóvel */
+    gap: 15px;
+  }
+  .evento-card {
+    padding: 20px 10px;
+  }
+  .evento-info h3 {
+    font-size: 1rem;
+  }
+  .evento-info p {
+    font-size: 0.75rem;
   }
 }
 
