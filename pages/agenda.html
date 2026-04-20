@@ -8,24 +8,28 @@
     content="Acompanhe a agenda cultural e os eventos da comunidade do bairro Volta Grande em Uberaba.">
   <title>Agenda Cultural - Volta Grande</title>
   <link rel="stylesheet" href="../style.css">
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M5ZGY6PVV2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <link rel="icon" href="../assets/icon/PVG.ico" type="image/ico">
 
-  gtag('config', 'G-M5ZGY6PVV2');
-</script>
-  
+  <!-- Google tag (gtag.js) -->
+   <!-- O código de rastreamento do Google Analytics é carregado de forma assíncrona para não impactar o desempenho da página -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M5ZGY6PVV2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-M5ZGY6PVV2');
+  </script>
+
 </head>
 
 <body>
+  <!-- Menu de navegação principal -->
   <nav class="menu-principal">
     <ul>
       <li><a href="../index.html">Início</a></li>
       <li><a href="coleta.html">Coleta</a></li>
-      <li><a href="agenda.html">Agenda</a></li>
+      <li><a href="agenda.html" class="ativo">Agenda</a></li>
       <li><a href="telefones.html">Contatos</a></li>
     </ul>
   </nav>
@@ -35,119 +39,92 @@
     <p>Participe nos eventos e fortaleça a nossa cultura local</p>
   </header>
 
+  <!-- Conteúdo principal da página de agenda -->
   <main>
     <section class="agenda">
-      <h2>Nossas Atividades</h2>
-
-      <div class="lista-eventos">
-
-        <div class="evento-card">
-          <div class="evento-icone">
-            <img src="../assets/icon/group-of-fruits.png" alt="Ícone de frutas representando a Feira Livre">
-          </div>
-          <div class="evento-info">
-            <span class="data-badge">Toda Sexta-Feira</span>
-            <h3>Feira Livre</h3>
-            <p>Frutas, verduras, pastéis e artesanato local.</p>
-            <p><strong>Das 16h às 22h</strong></p>
-          </div>
+  
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+        <h2 style="margin: 0;">Nossas Atividades</h2>
+  
+        <!-- Botões de administração (visíveis apenas para administradores) -->
+        <div style="display: flex; gap: 10px;">
+          <button id="btn-novo-evento" class="btn-admin" style="display: none;">+ Novo Evento</button>
+          <button id="btn-sair" class="btn-admin" style="display: none; background: #e74c3c;">Sair</button>
         </div>
-
-        <div class="evento-card">
-          <div class="evento-icone">
-            <img src="../assets/icon/musical-notes.png"
-              alt="Ícone de notas musicais representando o projeto Talentos Cidadania">
-          </div>
-          <div class="evento-info">
-            <span class="data-badge">Todo Sábado</span>
-            <h3>Talentos Cidadania</h3>
-            <p>Música, Hip-Hop e dança na praça.</p>
-            <p><strong>Apartir das 16h.</strong></p>
-          </div>
-        </div>
-
-        <div class="evento-card">
-          <div class="evento-icone">
-            <img src="../assets/icon/microphone.png" alt="Ícone de microfone representando a Batalha de Rima">
-          </div>
-          <div class="evento-info">
-            <span class="data-badge">Trimestral</span>
-            <h3>Batalha de Rima</h3>
-            <p>Encontro da juventude e cultura urbana.</p>
-            <p><strong>Aguarde informações!</strong></p>
-          </div>
-        </div>
-
-        <div class="evento-card">
-          <div class="evento-icone">
-            <img src="../assets/icon/vacina.png" alt="Campanha de castração e vacinação de animais">
-          </div>
-          <div class="evento-info">
-            <span class="data-badge">Abril</span>
-            <h3>Campanha de Castração e Vacinação</h3>
-            <p>Cães e gatos entre 6 meses e 7 anos.</p>
-            <p><strong>Dia 22 a 30 a partir das 08h.</strong></p>
-          </div>
-        </div>
-
-        <div class="evento-card">
-          <div class="evento-icone">
-            <img src="../assets/icon/emprego.png" alt="Ofertas de empregos">
-          </div>
-          <div class="evento-info">
-            <span class="data-badge">Abril</span>
-            <h3>Campanha de Empregos</h3>
-            <p>Oportunidades de trabalho para a comunidade.</p>
-            <p><strong>Dia 17 a partir das 08h.</strong></p>
-          </div>
-        </div>
-
-        <div class="evento-card">
-          <div class="evento-icone">
-            <img src="../assets/icon/roupa.png" alt="Campanha do agasalho">
-          </div>
-          <div class="evento-info">
-            <span class="data-badge">Maio</span>
-            <h3>Campanha do Agasalho</h3>
-            <p>Doações de roupas.</p>
-            <p><strong>Aguarde informações!</strong></p>
-          </div>
-        </div>
-
-        <div class="evento-card">
-          <div class="evento-icone">
-            <img src="../assets/icon/comida.png" alt="Doação de alimento">
-          </div>
-          <div class="evento-info">
-            <span class="data-badge">Julho</span>
-            <h3>Doação de Alimentos</h3>
-            <p>Doações de alimentos e itens de higiene.</p>
-            <p><strong>Aguarde informações!</strong></p>
-          </div>
-        </div>
-
-        <div class="evento-card">
-          <div class="evento-icone">
-            <img src="../assets/icon/diversão.png" alt="Integração no bairro.">
-          </div>
-          <div class="evento-info">
-            <span class="data-badge">Julho</span>
-            <h3>Integração no Bairro</h3>
-            <p>Atividades de convivência e lazer para a comunidade.</p>
-            <p><strong>Aguarde informações!</strong></p>
-          </div>
-        </div>
-
       </div>
+  
+      <!-- Container onde os eventos serão listados dinamicamente -->
+      <div id="container-eventos" class="lista-eventos">
+        <p style="text-align: center; width: 100%; grid-column: 1 / -1;">Carregando eventos...</p>
+      </div>
+  
     </section>
   </main>
 
   <footer>
-    <p><strong>Associação de Moradores do Bairro Volta Grande </strong>- Uberaba/MG</p>
+    <p><strong>Associação de Moradores do Bairro Volta Grande</strong></p>
+    <p>Uberaba/MG</p>
     <p class="footer-autor">
       Desenvolvido por Alessandro Sousa | Sistemas de Informação
+      <span id="btn-login-secreto" style="cursor: pointer; opacity: 0.2; margin-left: 10px;">🔒</span>
     </p>
   </footer>
+
+  <div id="modal-login" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <h3>Área Administrativa</h3>
+      <input type="email" id="login-email" placeholder="E-mail">
+      <input type="password" id="login-senha" placeholder="Senha">
+      <button id="btn-entrar" class="btn-admin">Entrar</button>
+      <button class="btn-fechar-modal"
+        onclick="document.getElementById('modal-login').style.display='none'">Cancelar</button>
+    </div>
+  </div>
+
+  <div id="modal-evento" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <h3 id="modal-titulo">Adicionar Evento</h3>
+      <input type="hidden" id="evento-id">
+  
+      <label>Ícone (Nome do arquivo ex: musica.png)</label>
+      <input type="text" id="evento-icone" placeholder="musica.png" list="lista-icones">
+  
+      <datalist id="lista-icones">
+
+        <option value="frutas.png">
+        <option value="musica.png">
+        <option value="microfone.png">
+        <option value="comida.png">
+        <option value="roupa.png">
+        <option value="emprego.png">
+        <option value="vacina.png">
+        <option value="teatro.png">
+        <option value="esporte.png">
+        <option value="educacao.png">
+        <option value="saude.png">
+        
+      </datalist>
+  
+      <label>Data/Frequência</label>
+      <input type="text" id="evento-data" placeholder="ex: Toda Sexta">
+  
+      <label>Título do Evento</label>
+      <input type="text" id="evento-titulo" placeholder="Nome do evento">
+  
+      <label>Descrição</label>
+      <textarea id="evento-desc" rows="3" placeholder="Detalhes do evento..."></textarea>
+  
+      <label>Observação (Opcional)</label>
+      <input type="text" id="evento-obs" placeholder="Aguarde informações" style="font-weight: bold;">
+  
+      <button id="btn-salvar-evento" class="btn-admin">Salvar Evento</button>
+      <button class="btn-fechar-modal"
+        onclick="document.getElementById('modal-evento').style.display='none'">Cancelar</button>
+
+    </div>
+  </div>
+
+  <script type="module" src="agenda-firebase.js"></script>
 
 </body>
 
