@@ -4,30 +4,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Telefones úteis e de emergência.">
+  <meta name="description" content="Telefones úteis e de emergência.">
 
   <title>Telefones Úteis - Volta Grande</title>
   <link rel="stylesheet" href="../style.css">
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M5ZGY6PVV2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <link rel="icon" href="../assets/icon/PVG.ico" type="image/ico">
 
-  gtag('config', 'G-M5ZGY6PVV2');
-</script>
-  
+  <!-- Google tag (gtag.js) -->
+  <!-- O código de rastreamento do Google Analytics é carregado de forma assíncrona para não impactar o desempenho da página -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M5ZGY6PVV2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-M5ZGY6PVV2');
+  </script>
+
 </head>
 
 <body>
+  <!-- Menu de navegação principal -->
   <nav class="menu-principal">
     <ul>
       <li><a href="../index.html">Início</a></li>
       <li><a href="coleta.html">Coleta</a></li>
       <li><a href="agenda.html">Agenda</a></li>
-      <li><a href="telefones.html">Contatos</a></li>
+      <li><a href="telefones.html" class="ativo">Contatos</a></li>
     </ul>
   </nav>
 
@@ -37,6 +40,7 @@
   </header>
 
   <main>
+  
     <section class="telefones-uteis">
       <h2>Contatos Importantes</h2>
       <div class="grid-telefones">
@@ -102,7 +106,8 @@
   </main>
 
   <footer>
-    <p><strong>Associação de Moradores do Bairro Volta Grande </strong>- Uberaba/MG</p>
+    <p><strong>Associação de Moradores do Bairro Volta Grande</strong></p>
+    <p>Uberaba/MG</p>
     <p class="footer-autor">
       Desenvolvido por Alessandro Sousa | Sistemas de Informação
     </p>
