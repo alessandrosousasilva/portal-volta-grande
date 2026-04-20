@@ -133,7 +133,7 @@ async function buscarClima() {
 
     // Em caso de erro, exibe uma mensagem genérica e registra o erro no console para facilitar o diagnóstico
   } catch (error) {
-    console.error("Erro no Widget de Clima:", error); 
+    console.error("Erro no Widget de Clima:", error);
     document.getElementById("clima-texto").innerText =
       "Uberaba: Clima indisponível no momento";
   }
