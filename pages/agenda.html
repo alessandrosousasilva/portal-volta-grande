@@ -11,7 +11,7 @@
   <link rel="icon" href="../assets/icon/PVG.ico" type="image/ico">
 
   <!-- Google tag (gtag.js) -->
-   <!-- O código de rastreamento do Google Analytics é carregado de forma assíncrona para não impactar o desempenho da página -->
+  <!-- O código de rastreamento do Google Analytics é carregado de forma assíncrona para não impactar o desempenho da página -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M5ZGY6PVV2"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -32,6 +32,9 @@
       <li><a href="agenda.html" class="ativo">Agenda</a></li>
       <li><a href="telefones.html">Contatos</a></li>
     </ul>
+
+    <button id="btn-sair" class="btn-sair" style="display: none;">Sair</button>
+
   </nav>
 
   <header>
@@ -42,23 +45,25 @@
   <!-- Conteúdo principal da página de agenda -->
   <main>
     <section class="agenda">
-  
+
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
         <h2 style="margin: 0;">Nossas Atividades</h2>
-  
+
         <!-- Botões de administração (visíveis apenas para administradores) -->
         <div style="display: flex; gap: 10px;">
-          <button id="btn-novo-evento" class="btn-admin" style="display: none;">+ Novo Evento</button>
+          <button id="btn-novo-evento" class="btn-admin" style="display: none;">Nova Atividade</button>
           <button id="btn-sair" class="btn-admin" style="display: none; background: #e74c3c;">Sair</button>
         </div>
       </div>
-  
+
       <!-- Container onde os eventos serão listados dinamicamente -->
       <div id="container-eventos" class="lista-eventos">
         <p style="text-align: center; width: 100%; grid-column: 1 / -1;">Carregando eventos...</p>
       </div>
-  
+
     </section>
+
+
   </main>
 
   <footer>
@@ -85,10 +90,10 @@
     <div class="modal-content">
       <h3 id="modal-titulo">Adicionar Evento</h3>
       <input type="hidden" id="evento-id">
-  
-      <label>Ícone (Nome do arquivo ex: musica.png)</label>
+
+      <label>Ícone (selecione um da lista abaixo)</label>
       <input type="text" id="evento-icone" placeholder="musica.png" list="lista-icones">
-  
+
       <datalist id="lista-icones">
 
         <option value="frutas.png">
@@ -105,21 +110,21 @@
         <option value="religiao.png">
         <option value="festa.png">
         <option value="crianca.png">
-        
+
       </datalist>
-  
+
       <label>Data/Frequência</label>
       <input type="text" id="evento-data" placeholder="ex: Toda Sexta">
-  
+
       <label>Título do Evento</label>
       <input type="text" id="evento-titulo" placeholder="Nome do evento">
-  
+
       <label>Descrição</label>
       <textarea id="evento-desc" rows="3" placeholder="Detalhes do evento..."></textarea>
-  
+
       <label>Observação (Opcional)</label>
       <input type="text" id="evento-obs" placeholder="Aguarde informações" style="font-weight: bold;">
-  
+
       <button id="btn-salvar-evento" class="btn-admin">Salvar Evento</button>
       <button class="btn-fechar-modal"
         onclick="document.getElementById('modal-evento').style.display='none'">Cancelar</button>
@@ -127,7 +132,7 @@
     </div>
   </div>
 
-  <script type="module" src="agenda-firebase.js"></script>
+  <script type="module" src="../js/agenda-firebase.js"></script>
 
 </body>
 

@@ -26,7 +26,7 @@
 </head>
 
 <body>
-<!-- Menu de navegação principal -->
+  <!-- Menu de navegação principal -->
   <nav class="menu-principal">
     <ul>
       <li><a href="index.html" class="ativo">Início</a></li>
@@ -34,103 +34,68 @@
       <li><a href="pages/agenda.html">Agenda</a></li>
       <li><a href="pages/telefones.html">Contatos</a></li>
     </ul>
+
+    <button id="btn-sair" class="btn-sair" style="display: none;">Sair</button>
+
   </nav>
 
   <header>
+
     <h1>Associação de Bairro Volta Grande</h1>
     <p>Transparência, Cultura e Informação para nossa comunidade</p>
 
     <div id="widget-clima" class="clima-container">
       <span id="clima-texto">Carregando clima...</span>
     </div>
+
   </header>
 
   <main>
     <section class="galeria">
-      <h2>Galeria de Imagens e Eventos</h2>
-      <div class="grid-fotos">
 
-        <div class="foto-item">
-          <div class="imagem-container">
-            <img src="assets/img3-praca.jpg" alt="Praça do Volta Grande">
-          </div>
-          <p>Nossa Praça</p>
-        </div>
-
-        <div class="foto-item">
-          <div class="imagem-container">
-            <img src="assets/img1-pista-skate.jpg" alt="Pista de Skate da comunidade">
-          </div>
-          <p>Pista de Skate</p>
-        </div>
-
-        <div class="foto-item">
-          <div class="imagem-container">
-            <img src="assets/img4-quadra.jpg" alt="Quadra de Esportes">
-          </div>
-          <p>Quadra de Esportes</p>
-        </div>
-
-        <div class="foto-item">
-          <div class="imagem-container">
-            <img src="assets/img5-feira-livre.jpg" alt="Feira Livre">
-          </div>
-          <p>Feira Livre as Sextas</p>
-        </div>
-
-        <div class="foto-item">
-          <div class="imagem-container">
-            <img src="assets/img6-ums.jpg" alt="UMS - Unidade Mista de Saúde">
-          </div>
-          <p>UMS - Unidade Mista de Saúde</p>
-        </div>
-
-        <div class="foto-item">
-          <div class="imagem-container">
-            <img src="assets/img7-paroquia.jpg" alt="Paróquia do Volta Grande">
-          </div>
-          <p>Paróquia Cristo Bom Pastor</p>
-        </div>
-
-        <div class="foto-item">
-          <div class="imagem-container">
-            <img src="assets/img8-eco-ponto.jpg" alt="Eco-Ponto para Reciclagem">
-          </div>
-          <p>Eco-Ponto</p>
-        </div>
-
-        <div class="foto-item">
-          <div class="imagem-container">
-            <img src="assets/img9-cemei.jpg" alt="CEMEI - Centro Municipal de Educação Infantil">
-          </div>
-          <p>CEMEI</p>
-        </div>
-
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+        <h2 style="margin: 0;">Galeria de Imagens e Eventos</h2>
+        <button id="btn-novo-album" class="btn-admin"
+          style="display: none; background-color: var(--azul-primario, #0b5ed7); color: white; border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; cursor: pointer;">
+          Adicionar Novo Evento
+        </button>
       </div>
+
+      <div id="grid-albuns" class="grid-fotos">
+        <p style="text-align: center; width: 100%;">Carregando eventos...</p>
+      </div>
+
     </section>
 
     <br>
 
-    <section class="mapa-bairro">
-      <h2>Mapa Comunitário</h2>
-      <p>Navegue pelo nosso mapa para encontrar a feira livre, nossa praça e a quadra de esportes.</p>
+    <section class="mapa-comunidade">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <div>
+          <h2 style="margin: 0;">Mapa da Comunidade</h2>
+          <p style="margin-top: 5px; color: #666;">Navegue pelo nosso mapa.
+          </p>
+        </div>
 
-      <div id="mapa-volta-grande"
-        style="height: 400px; width: 100%; border-radius: 12px; border: 2px solid rgba(0,0,0,0.05); box-shadow: 0 4px 10px rgba(0,0,0,0.05); z-index: 1;">
+        <button id="btn-novo-marcador" class="btn-admin"
+          style="display: none; background-color: var(--azul-primario, #0b5ed7); color: white; border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; cursor: pointer;">
+          Adicionar Local no mapa
+        </button>
       </div>
 
-      <div class="legenda-mapa"
-        style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; background: #fff; padding: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-        <span class="legenda-item">🌳 Praça</span>
-        <span class="legenda-item">🥗 Feira Livre</span>
-        <span class="legenda-item">⚽ Quadras</span>
-        <span class="legenda-item">🛹 Skate</span>
-        <span class="legenda-item">⛪ Paróquia</span>
-        <span class="legenda-item">🏥 Saúde</span>
-        <span class="legenda-item">🎒 Escolas</span>
-        <span class="legenda-item">🧸 CEMEI</span>
-        <span class="legenda-item">♻️ Eco-Ponto</span>
+      <div id="map" style="height: 400px; border-radius: 8px; z-index: 1;"></div>
+
+      <div class="legenda-mapa">
+        <div class="legenda-item"><span>📍</span> Geral</div>
+        <div class="legenda-item"><span>🏥</span> Saúde</div>
+        <div class="legenda-item"><span>⚽</span> Esporte</div>
+        <div class="legenda-item"><span>🌳</span> Praça</div>
+        <div class="legenda-item"><span>🛒</span> Feira, Comércio</div>
+        <div class="legenda-item"><span>♻️</span> Eco-Ponto</div>
+        <div class="legenda-item"><span>⛪</span> Religião</div>
+        <div class="legenda-item"><span>📚</span> CEMEI, Escolas</div>
       </div>
+
     </section>
   </main>
 
@@ -143,6 +108,97 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <div id="modal-galeria" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="max-width: 800px; width: 95%;">
+      <h3 id="titulo-galeria">Galeria de Fotos</h3>
+
+      <div id="area-upload-admin"
+        style="display: none; background: #f4f7f6; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+        <label><strong>Adicionar nova foto:</strong></label><br>
+        <input type="file" id="input-foto" accept="image/*" style="margin-top: 5px; width: 100%;">
+        <button id="btn-upload" class="btn-admin" style="margin-top: 10px;">Salvar Foto</button>
+      </div>
+
+      <div id="grid-fotos-interna" class="grid-fotos-interna">
+        <p>Carregando fotos...</p>
+      </div>
+
+      <button class="btn-fechar-modal" style="margin-top: 20px;"
+        onclick="document.getElementById('modal-galeria').style.display='none'">Fechar Galeria</button>
+    </div>
+
+    <div id="modal-lightbox" class="modal-overlay"
+      style="display: none; z-index: 3000; background: rgba(0, 0, 0, 0.9);">
+      <span class="btn-fechar-lightbox"
+        onclick="document.getElementById('modal-lightbox').style.display='none'">&times;</span>
+
+      <img id="img-lightbox" src="" alt="Foto Ampliada">
+
+    </div>
+
+  </div>
+
+  <div id="modal-album" class="modal-overlay" style="display: none; z-index: 2000;">
+    <div class="modal-content" style="max-width: 500px; width: 95%;">
+      <h3 id="titulo-modal-album">Novo Evento</h3>
+      <input type="hidden" id="album-id">
+      <input type="hidden" id="album-capa-antiga">
+
+      <label>Título do Evento (Ex: Festa Junina):</label>
+      <input type="text" id="album-titulo" style="width: 100%; margin-bottom: 10px; padding: 8px;">
+
+      <label>Descrição (Opcional):</label>
+      <textarea id="album-descricao" rows="2" placeholder="Ex: Evento realizado na praça principal..."
+        style="width: 100%; margin-bottom: 15px; padding: 8px;"></textarea>
+      <label>Foto de Capa do Cartão:</label>
+      <input type="file" id="album-capa" accept="image/*" style="width: 100%; margin-bottom: 15px;">
+
+      <button id="btn-salvar-album" class="btn-admin">Salvar Cartão</button>
+      <button class="btn-fechar-modal" onclick="document.getElementById('modal-album').style.display='none'"
+        style="margin-top: 10px; background: #ccc; color: #333;">Cancelar</button>
+    </div>
+  </div>
+
+  <div id="modal-mapa" class="modal-overlay" style="display: none; z-index: 3000;">
+    <div class="modal-content" style="max-width: 400px; width: 95%;">
+      <h3>Novo Local no Mapa</h3>
+
+      <input type="hidden" id="mapa-lat">
+      <input type="hidden" id="mapa-lng">
+
+      <label>Nome do Local (Ex: Eco-Ponto):</label>
+      <input type="text" id="mapa-titulo" style="width: 100%; margin-bottom: 10px; padding: 8px;">
+
+      <label>Categoria / Ícone:</label>
+
+      <select id="mapa-icone"
+        style="width: 100%; margin-bottom: 10px; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+        <option value="📍">📍 Geral / Ponto de Interesse</option>
+        <option value="🏥">🏥 Saúde (UMS, Postos)</option>
+        <option value="⚽">⚽ Esporte e Lazer</option>
+        <option value="🌳">🌳 Praça / Natureza</option>
+        <option value="🛒">🛒 Feira / Comércio</option>
+        <option value="♻️">♻️ Eco-Ponto / Coleta</option>
+        <option value="⛪">⛪ Religião / Igreja</option>
+        <option value="📚">📚 Educação (CEMEI, Escolas)</option>
+      </select>
+
+      <label>Descrição breve:</label>
+      <textarea id="mapa-descricao" rows="2" style="width: 100%; margin-bottom: 15px; padding: 8px;"></textarea>
+
+      <button id="btn-salvar-marcador" class="btn-admin">Salvar no Mapa</button>
+      <button class="btn-fechar-modal"
+        onclick="document.getElementById('modal-mapa').style.display='none'; document.getElementById('map').style.cursor='grab';"
+        style="margin-top: 10px; background: #ccc; color: #333;">Cancelar</button>
+    </div>
+
+  </div>
+
+  <script type="module" src="script.js"></script>
+  <script type="module" src="js/galeria-firebase.js"></script>
+  <script type="module" src="js/mapa-firebase.js"></script>
+</body>
 
 </body>
 
