@@ -80,9 +80,9 @@ async function carregarMarcadores() {
     const meuIcone = L.divIcon({
       className: "marcador-personalizado",
       html: `<div>${iconeEmoji}</div>`,
-      iconSize: [36, 36], // Tamanho do círculo
-      iconAnchor: [18, 36], // Ponto de ancoragem (centro, na parte inferior)
-      popupAnchor: [0, -36], // Onde a caixa de texto abre
+      iconSize: [30, 30], // Tamanho do círculo
+      iconAnchor: [15, 15], // Ponto de ancoragem (centro, na parte inferior)
+      popupAnchor: [12, -1], // Onde a caixa de texto abre
     });
 
     // Adiciona ao mapa usando a nossa caixinha com o emoji
