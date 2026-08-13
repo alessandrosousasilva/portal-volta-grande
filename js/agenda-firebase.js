@@ -42,7 +42,7 @@ const btnNovoEvento = document.getElementById("btn-novo-evento");
 // Variável para saber se o Admin está logado
 let isAdmin = false;
 
-const btnSair = document.getElementById("btn-sair"); 
+const btnSair = document.getElementById("btn-sair");
 
 // ==========================================
 // 1. AUTENTICAÇÃO (LOGIN E LOGOUT)
@@ -92,7 +92,7 @@ onAuthStateChanged(auth, (user) => {
 async function carregarEventos() {
   // TRAVA DE SEGURANÇA: Se não achar o container na tela, para o código aqui e não dá erro!
   if (!containerEventos) return;
-  
+
   containerEventos.innerHTML = "<p>Carregando eventos...</p>";
   const querySnapshot = await getDocs(collection(db, "eventos"));
 
@@ -140,67 +140,75 @@ async function carregarEventos() {
 // ==========================================
 // 3. CRUD: CRIAR E ATUALIZAR
 // ==========================================
-btnNovoEvento.addEventListener('click', () => {
-    document.getElementById('evento-id').value = "";
-    document.getElementById('evento-titulo').value = "";
-    document.getElementById('evento-desc').value = "";
-    document.getElementById('evento-icone').value = "";
-    document.getElementById('evento-data').value = "";
-    document.getElementById('evento-obs').value = ""; // Limpa a observação
-    document.getElementById('modal-titulo').innerText = "Novo Evento";
-    modalEvento.style.display = 'flex';
+btnNovoEvento.addEventListener("click", () => {
+  document.getElementById("evento-id").value = "";
+  document.getElementById("evento-titulo").value = "";
+  document.getElementById("evento-desc").value = "";
+  document.getElementById("evento-icone").value = "";
+  document.getElementById("evento-data").value = "";
+  document.getElementById("evento-obs").value = ""; // Limpa a observação
+  document.getElementById("modal-titulo").innerText = "Novo Evento";
+  modalEvento.style.display = "flex";
 });
 
-document.getElementById('btn-salvar-evento').addEventListener('click', async () => {
-    const id = document.getElementById('evento-id').value;
-    
+document
+  .getElementById("btn-salvar-evento")
+  .addEventListener("click", async () => {
+    const id = document.getElementById("evento-id").value;
+
     // Captura os dados do formulário, incluindo a nova observação
     const dados = {
-        titulo: document.getElementById('evento-titulo').value,
-        descricao: document.getElementById('evento-desc').value,
-        icone: document.getElementById('evento-icone').value,
-        frequencia: document.getElementById('evento-data').value,
-        observacao: document.getElementById('evento-obs').value
+      titulo: document.getElementById("evento-titulo").value,
+      descricao: document.getElementById("evento-desc").value,
+      icone: document.getElementById("evento-icone").value,
+      frequencia: document.getElementById("evento-data").value,
+      observacao: document.getElementById("evento-obs").value,
     };
 
     try {
-        if (id) {
-            await updateDoc(doc(db, "eventos", id), dados);
-        } else {
-            await addDoc(collection(db, "eventos"), dados);
-        }
-        modalEvento.style.display = 'none';
-        carregarEventos();
+      if (id) {
+        await updateDoc(doc(db, "eventos", id), dados);
+      } else {
+        await addDoc(collection(db, "eventos"), dados);
+      }
+      modalEvento.style.display = "none";
+      carregarEventos();
     } catch (error) {
-        alert("Erro ao salvar: " + error.message);
+      alert("Erro ao salvar: " + error.message);
     }
-});
+  });
 
 // ==========================================
 // 4. CRUD: EDITAR E EXCLUIR
 // ==========================================
 function configurarBotoesAcao() {
-    document.querySelectorAll('.btn-excluir').forEach(btn => {
-        btn.addEventListener('click', async (e) => {
-            const id = e.target.getAttribute('data-id');
-            if (confirm("Tem certeza que deseja excluir este evento?")) {
-                await deleteDoc(doc(db, "eventos", id));
-                carregarEventos();
-            }
-        });
+  document.querySelectorAll(".btn-excluir").forEach((btn) => {
+    btn.addEventListener("click", async (e) => {
+      const id = e.target.getAttribute("data-id");
+      if (confirm("Tem certeza que deseja excluir este evento?")) {
+        await deleteDoc(doc(db, "eventos", id));
+        carregarEventos();
+      }
     });
+  });
 
-    document.querySelectorAll('.btn-editar').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            document.getElementById('evento-id').value = e.target.getAttribute('data-id');
-            document.getElementById('evento-titulo').value = e.target.getAttribute('data-titulo');
-            document.getElementById('evento-desc').value = e.target.getAttribute('data-desc');
-            document.getElementById('evento-icone').value = e.target.getAttribute('data-icone');
-            document.getElementById('evento-data').value = e.target.getAttribute('data-freq');
-            document.getElementById('evento-obs').value = e.target.getAttribute('data-obs'); // Preenche a observação
-            
-            document.getElementById('modal-titulo').innerText = "Editar Evento";
-            modalEvento.style.display = 'flex';
-        });
+  document.querySelectorAll(".btn-editar").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      document.getElementById("evento-id").value =
+        e.target.getAttribute("data-id");
+      document.getElementById("evento-titulo").value =
+        e.target.getAttribute("data-titulo");
+      document.getElementById("evento-desc").value =
+        e.target.getAttribute("data-desc");
+      document.getElementById("evento-icone").value =
+        e.target.getAttribute("data-icone");
+      document.getElementById("evento-data").value =
+        e.target.getAttribute("data-freq");
+      document.getElementById("evento-obs").value =
+        e.target.getAttribute("data-obs"); // Preenche a observação
+
+      document.getElementById("modal-titulo").innerText = "Editar Evento";
+      modalEvento.style.display = "flex";
     });
+  });
 }
